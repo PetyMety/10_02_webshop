@@ -7,7 +7,59 @@
 </head>
 <body>
   
-  
+  <form method="post">
+    <h2>Termék kiválasztása</h2>
+    <% for (let product of products) { %>
+      <input type="radio" name="productId" value="<%= product.id %>">
+      <img src="<%= product.image %>">
+      <%= product.name %>
+    <% } %>
+
+    <h2>Személyes adatok</h2>
+    Név:
+    <input type="text" name="name" value="<%= data.name %>"><br>
+
+    <h2>Számlázási cím</h2>
+    Ország:
+    <input type="text" name="billingAddress.country" value="<%= data.billingAddress.country %>"><br>
+    Irányítószám:
+    <input type="text" name="billingAddress.zipCode" value="<%= data.billingAddress.zipCode %>"><br>
+    Város:
+    <input type="text" name="billingAddress.city" value="<%= data.billingAddress.city %>"><br>
+    Utca és házszám:
+    <input type="text" name="billingAddress.street" value="<%= data.billingAddress.street %>"><br>
+    Házszám:
+    <input type="text" name="billingAddress.houseNumber" value="<%= data.billingAddress.houseNumber %>"><br>
+
+    <h2>Szállítási cím</h2>
+    Ország:
+    <input type="text" name="shippingAddress.country" value="<%= data.shippingAddress.country %>"><br>
+    Irányítószám:
+    <input type="text" name="shippingAddress.zipCode" value="<%= data.shippingAddress.zipCode %>"><br>
+    Város:
+    <input type="text" name="shippingAddress.city" value="<%= data.shippingAddress.city %>"><br>
+    Utca és házszám:
+    <input type="text" name="shippingAddress.street" value="<%= data.shippingAddress.street %>"><br>
+    Házszám:
+    <input type="text" name="shippingAddress.houseNumber" value="<%= data.shippingAddress.houseNumber %>"><br>
+
+    <h2>Kuponkód</h2>
+    <input type="text" name="couponCode" value="<%= data.couponCode %>"><br>
+
+    <h2>Fizetési eszköz</h2>
+    Bankkártya szám:
+    <input type="text" name="paymentMethod.cardNumber" value="<%= data.paymentMethod.cardNumber %>"><br>
+    Lejárati dátum:
+    <input type="text" name="paymentMethod.expirationDate" value="<%= data.paymentMethod.expirationDate %>"><br>
+    Biztonsági kód:
+    <input type="text" name="paymentMethod.securityCode" value="<%= data.paymentMethod.securityCode %>"><br>
+
+    <% for (let error of errors) { %>
+      <p style="color: red"><%= error %></p>
+    <% } %>
+
+    <input type="submit" value="Rendelés">
+  </form>
 
 </body>
 </html>

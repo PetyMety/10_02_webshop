@@ -23,9 +23,9 @@ export class AppController {
       data: {},
       errors: [],
       products: [
-        { id: 1, name: 'Product 1', image: 'product1.jpg' },
-        { id: 2, name: 'Product 2', image: 'product2.jpg' },
-        { id: 3, name: 'Product 3', image: 'product3.jpg' }
+        { id: 1, name: 'Product 1', image: 'https://picsum.photos/id/237/200/300' },
+        { id: 2, name: 'Product 2', image: 'https://picsum.photos/id/237/200/300' },
+        { id: 3, name: 'Product 3', image: 'https://picsum.photos/id/237/200/300' }
       ]
     };
   }
