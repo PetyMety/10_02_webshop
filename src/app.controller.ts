@@ -31,7 +31,7 @@ export class AppController {
   }
 
   @Post('order')
-  async createOrder(
+    createOrder(
     @Body() orderDto: OrderDto,
     @Res() response: Response
   ) {
@@ -91,7 +91,6 @@ export class AppController {
       paymentMethod: orderDto.paymentMethod
     };
 
-    // Save order to database or perform other actions
     console.log('Rendelés sikeresen leadva:', order);
 
     response.redirect('/orderSuccess');
