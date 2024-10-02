@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form</title>
+</head>
+<body>
+  <form method="post">
+    <h2>Product Selection</h2>
+    <select name="product">
+      <option value="">Select a product</option>
+      <option value="product1">Product 1</option>
+      <option value="product2">Product 2</option>
+      <option value="product3">Product 3</option>
+    </select>
+
+    <h2>Customer Information</h2>
+    <input type="text" name="name" value="<%= data.name %>" required>
+
+    <h2>Billing Address</h2>
+    <input type="text" name="billingAddress.country" value="<%= data.billingAddress.country %>" required>
+    <input type="text" name="billingAddress.zipCode" value="<%= data.billingAddress.zipCode %>" required>
+    <input type="text" name="billingAddress.city" value="<%= data.billingAddress.city %>" required>
+    <input type="text" name="billingAddress.street" value="<%= data.billingAddress.street %>" required>
+    <input type="text" name="billingAddress.houseNumber" value="<%= data.billingAddress.houseNumber %>" required>
+
+    <h2>Shipping Address</h2>
+    <input type="text" name="shippingAddress.country" value="<%= data.shippingAddress.country %>" required>
+    <input type="text" name="shippingAddress.zipCode" value="<%= data.shippingAddress.zipCode %>" required>
+    <input type="text" name="shippingAddress.city" value="<%= data.shippingAddress.city %>" required>
+    <input type="text" name="shippingAddress.street" value="<%= data.shippingAddress.street %>" required>
+    <input type="text" name="shippingAddress.houseNumber" value="<%= data.shippingAddress.houseNumber %>" required>
+
+    <h2>Coupon Code</h2>
+    <input type="text" name="couponCode" value="<%= data.couponCode %>" required>
+
+    <h2>Payment Method</h2>
+    <input type="text" name="paymentMethod.cardNumber" value="<%= data.paymentMethod.cardNumber %>" required>
+    <input type="text" name="paymentMethod.expirationDate" value="<%= data.paymentMethod.expirationDate %>" required>
+    <input type="text" name="paymentMethod.securityCode" value="<%= data.paymentMethod.securityCode %>" required>
+
+    <% for (let e of errors) { %>
+      <p style="color: red"><%= e %></p>
+    <% } %>
+
+    <input type="submit" value="Place Order">
+  </form>
+</body>
+</html>
